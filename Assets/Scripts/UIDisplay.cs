@@ -12,6 +12,8 @@ namespace BT.Magistrate
         [SerializeField] TextMeshProUGUI timeDisplay;
         [SerializeField] FloatReference gameTime;
 
+        [SerializeField] GameEvent resetTimerEvent;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -23,6 +25,11 @@ namespace BT.Magistrate
         {
             Debug.Log("From the UI: " + gameTime.ToString());
             timeDisplay.text = Mathf.RoundToInt(gameTime).ToString();
+        }
+
+        public void ResetTimer()
+        {
+            resetTimerEvent.Raise();
         }
     }
 }

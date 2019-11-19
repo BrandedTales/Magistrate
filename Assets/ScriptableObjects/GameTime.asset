@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameTime
   m_EditorClassIdentifier: 
   Description: This is a value to track the passage of time.
-  value: 30
+  value: 28.288883

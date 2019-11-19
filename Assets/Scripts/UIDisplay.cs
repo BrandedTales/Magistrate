@@ -11,8 +11,10 @@ namespace BT.Magistrate
     {
         [SerializeField] TextMeshProUGUI timeDisplay;
         [SerializeField] FloatReference gameTime;
+        [SerializeField] BoolVariable timerOn;
 
         [SerializeField] GameEvent resetTimerEvent;
+        [SerializeField] GameEvent toggleTimerEvent;
 
         // Start is called before the first frame update
         void Start()
@@ -24,12 +26,23 @@ namespace BT.Magistrate
         void Update()
         {
             Debug.Log("From the UI: " + gameTime.ToString());
+            if (timerOn.value)
+                timeDisplay.color = Color.white;
+            else
+                timeDisplay.color = Color.red;
+
             timeDisplay.text = Mathf.RoundToInt(gameTime).ToString();
         }
 
         public void ResetTimer()
         {
             resetTimerEvent.Raise();
+        }
+
+        public void ToggleTimer()
+        {
+            Debug.Log("Toggle Button pushed.");
+            toggleTimerEvent.Raise();
         }
     }
 }

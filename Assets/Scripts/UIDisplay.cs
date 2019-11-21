@@ -19,13 +19,13 @@ namespace BT.Magistrate
         // Start is called before the first frame update
         void Start()
         {
-            Debug.Log("Does this ever get called?");
+            //Debug.Log("Does this ever get called?");
         }
 
         // Update is called once per frame
         void Update()
         {
-            Debug.Log("From the UI: " + gameTime.ToString());
+            //Debug.Log("From the UI: " + gameTime.ToString());
             if (timerOn.value)
                 timeDisplay.color = Color.white;
             else

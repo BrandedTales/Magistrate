@@ -15,8 +15,10 @@ MonoBehaviour:
   DatabaseType: 0
   CategoryNames:
   - Custom
-  - Example
   - General
+  - TimerButtons
+  - Situations
   Categories:
-  - {fileID: 11400000, guid: 40f9e81ff80114a47a3721228ba749ed, type: 2}
   - {fileID: 11400000, guid: 8fe1309bf6b6b79409957ca58a57bbd0, type: 2}
+  - {fileID: 11400000, guid: 7de942dd4e89a5a488f796f3dc1bd3e6, type: 2}
+  - {fileID: 11400000, guid: d7c05cf625f9d6145b1ed57e2e437df0, type: 2}

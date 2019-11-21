@@ -16,7 +16,7 @@ namespace BT.Magistrate
         // Start is called before the first frame update
         void Start()
         {
-            ResetTimer();
+
         }
 
         // Update is called once per frame
@@ -37,7 +37,7 @@ namespace BT.Magistrate
 
             float currentTime = gameTime;
             currentTime -= Time.deltaTime;
-            Debug.Log("TimerCountDown: " + currentTime);
+            //Debug.Log("TimerCountDown: " + currentTime);
             gameTime.SetValue(currentTime);
         }
 

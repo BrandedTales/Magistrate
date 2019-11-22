@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Middling
   m_EditorClassIdentifier: 
   situationName: Middling
-  spawnTime: 7
+  baseSpawnTime: 2
+  timeout: 20
   difficulty: 1

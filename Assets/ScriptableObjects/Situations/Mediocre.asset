@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Mediocre
   m_EditorClassIdentifier: 
   situationName: Mediocre!
-  spawnTime: 3
+  baseSpawnTime: 3
+  timeout: 8
   difficulty: 1

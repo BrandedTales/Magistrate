@@ -11,7 +11,9 @@ namespace BT.Magistrate
     public class Situation : ScriptableObject
     {
         public string situationName;
-        public float spawnTime;
+        public float baseSpawnTime;
+
+        public float timeout;
 
         public float difficulty;
     }

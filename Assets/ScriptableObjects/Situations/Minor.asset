@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Minor
   m_EditorClassIdentifier: 
   situationName: Minor
-  spawnTime: 5
+  baseSpawnTime: 4
+  timeout: 13
   difficulty: 1

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Miniscule
   m_EditorClassIdentifier: 
   situationName: Miniscule
-  spawnTime: 1
+  baseSpawnTime: 9
+  timeout: 1
   difficulty: 1

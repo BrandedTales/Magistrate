@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BT.Variables;
+using Doozy.Engine.UI;
 using BT.Events;
 using System;
 
@@ -44,9 +45,10 @@ namespace BT.Magistrate
         {
             if (currentSituation == null) return;
 
-            if (gameTime < (turnLength - currentSituation.spawnTime))
+            if (gameTime < (turnLength - currentSituation.baseSpawnTime))
             {
                 Debug.Log("Situation: " + currentSituation.situationName);
+                ShowPopup();
                 currentSituation = NextSituation();
             }
         }
@@ -55,7 +57,7 @@ namespace BT.Magistrate
         {
             turnSituations.Sort(delegate (Situation a, Situation b)
             {
-                return a.spawnTime.CompareTo(b.spawnTime);
+                return a.baseSpawnTime.CompareTo(b.baseSpawnTime);
             }
             );
         }
@@ -70,6 +72,25 @@ namespace BT.Magistrate
             }
             return retVal;
 
+        }
+
+        public void ShowPopup()
+        {
+            UIPopup popup = UIPopup.GetPopup("SituationAlert");
+            if (popup == null)
+                return;
+
+
+            popup.Data.SetLabelsTexts(currentSituation.timeout.ToString());
+            popup.GetComponent<SituationHandler>().situationCountdown = currentSituation.timeout;
+
+            popup.Container.StartPosition.x = UnityEngine.Random.Range(-500,500);
+            popup.Container.StartPosition.y = UnityEngine.Random.Range(-50,50);
+
+            popup.AutoHideAfterShow = true;
+            popup.AutoHideAfterShowDelay = currentSituation.timeout;
+
+            popup.Show();
         }
 
     }
